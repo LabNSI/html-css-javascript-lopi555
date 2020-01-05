@@ -13,40 +13,40 @@ function init () {
 
   // Compléter le test
   // si sReq n'est pas une chaine vide
-  if(sReq ______)
+  if(sReq == 0)
   {
       const good = "NUMERIQUE_SC_INFORM";
       // La fonction split découpe une chaine de caractères (string) et retourne un tableau (array)
       // Quel caractère sépare les ensemble variable=valeur ?
       // Utiliser ce caractère pour découper la chaine sReq
-      var aReq = sReq.split("__");
+      var aReq = sReq.split("id");
       var mess = "";
       // Boucle sur les variables
       var aVar = [];
       for (var i=0;i<aReq.length;i++) {
         // Quel caractère sépare une variable de sa valeur ?
         // Utiliser ce caractère pour découper la chaine aReq[i]
-        aVar[i] = aReq[i].split("__");
+        aVar[i] = aReq[i].split("id");
         // Observer dans la console
         console.log("aVar["+i+"][0] = "+aVar[i][0]+"   "+"aVar["+i+"][1] = "+aVar[i][1]);
       }
       //Construire la chaine suivante en utilisant les valeurs récupérées
       // mess = valeur_du prenom + " " + valeur_du_nom + " " + valeur_de_classe + " : "
-      mess = _______ + " " + ______ + " de " + ______ + " : ";
+      mess = prénom + " " + nom + " de " + classe + " : ";
 
       //Si au moins une des spécialités est = "NUMERIQUE_SC_INFORM"
       // Ajouter à mess "Bon choix !"
       // Sinon ajouter à mess "Mauvais choix !"
       if(aVar[3][0] == good || aVar[4][0] == good)
       {
-        mess += ______________;
+        mess += "Bon choix !";
       }
       else {
-        mess += ______________;
+        mess += "Mauvais choix !";
       }
 
       // Ajouter le code HTML mess à l'élément d'ID='resultat'
-      document.getElementById('______')._________ = _______;
+      document.getElementById('resultat')._________ = _______;
   }
 }
 
@@ -64,12 +64,12 @@ function resultat() {
     message += "\n- Prénom";
   }
 
-  // ?
+  //  Vérifier si le nom a été saisie.
   if(f.elements["nom"].value == "")  {
     message += "\n- Nom";
   }
 
-  // ?
+  // Vérifier si une classe a été cocher.
   if(!f.elements[2].checked && !f.elements[3].checked && !f.elements[4].checked){
     message += "\n- Classe";
   }
@@ -83,12 +83,12 @@ function resultat() {
     }
   }
 
-  // ?
+  // // vérifier que deux spécialités sont selectionné
   if(cpt!=2){
     message += "\n- Deux spécialités";
   }
 
-  // ?
+  // // si non 1 ou3et+ selectionner
   if(message != "Compléter les champs :"){
     alert(message);
     // Mettre fin à lexécution de la fonction
